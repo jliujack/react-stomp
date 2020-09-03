@@ -1,5 +1,5 @@
 {
-  "name": "react-stomp",
+  "name": "react-stomp-with-headers",
   "version": "5.0.0",
   "description": "React websocket component with STOMP over SockJS",
   "main": "./dist/client.js",
@@ -9,7 +9,6 @@
     ]
   },
   "scripts": {
-    "prepublish": "npm run test && npm run build",
     "lint": "eslint src/* test/*",
     "lint-fix": "eslint src/* test/* --fix",
     "test": "npm run lint && mocha --require @babel/register --require test/bootstrap.js --recursive test/unit --exit",
@@ -29,7 +28,7 @@
     "sockjs",
     "stomp"
   ],
-  "author": "lahsivjar",
+  "author": "liujie",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/lahsivjar/react-stomp/issues"

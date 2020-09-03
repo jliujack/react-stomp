@@ -59,6 +59,7 @@ class SockJsClient extends React.Component {
      *
      * @param {(string|Object)} msg message received from server, if JSON format then object
      * @param {string} topic the topic on which the message was received
+     * @param {string} headers the headers on which the message was received
      */
     onMessage: PropTypes.func.isRequired,
     /**
@@ -177,7 +178,7 @@ class SockJsClient extends React.Component {
   _subscribe = (topic) => {
     if (!this.subscriptions.has(topic)) {
       let sub = this.client.subscribe(topic, (msg) => {
-        this.props.onMessage(this._processMessage(msg.body), msg.headers.destination)
+        this.props.onMessage(this._processMessage(msg.body), msg.headers.destination, msg.headers)
       }, this.props.subscribeHeaders)
       this.subscriptions.set(topic, sub)
     }
